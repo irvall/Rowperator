@@ -150,9 +150,6 @@ class Rowperator {
                 case '-':
                     subtractTwoRows(row1, row2);
                     break;
-                case '/':
-                    divideRow(row1, 4);
-                    break;
                 case 's':
                     swapRow(row1, row2);
                     break;
