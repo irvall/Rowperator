@@ -2,7 +2,7 @@
 Simple Java program for making row operations on m x n matrices
 
 ### Usage
-Download and run `Rowperator.java` and run it in your terminal of choice.
+Download `Rowperator.java` and run it in your terminal of choice.
 
 
 #### With a custom matrix:
