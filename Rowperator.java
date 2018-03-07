@@ -38,7 +38,7 @@ class Rowperator {
     }
 
     /**
-     * Get your matrix in a format that Wolfram Alpha can interpret.
+     * Get your matrix as a String in a format that WolframAlpha (www.wolframalpha.com) can interpret.
      */
     private String wolframFormat() {
         String out = "{";
