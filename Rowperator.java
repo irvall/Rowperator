@@ -23,10 +23,9 @@ class Rowperator {
             }
         }
         show();
-        System.out.println(wolframFormat());
     }
 
-    private String wolframFormat() {
+    private String wolframAlphaFormat() {
         String out = "{";
 
         for (int i = 0; i < matrix.length; i++) {
