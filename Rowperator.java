@@ -182,7 +182,7 @@ class Rowperator {
     private void show() {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                DecimalFormat numberFormat = new DecimalFormat("#.00");
+                DecimalFormat numberFormat = new DecimalFormat("#0.00");
                 System.out.print(numberFormat.format(matrix[i][j]) + "\t");
             }
             System.out.println();
