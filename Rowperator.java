@@ -35,9 +35,11 @@ class Rowperator {
             }
         }
         show();
-        System.out.println(wolframFormat());
     }
 
+    /**
+     * Get your matrix in a format that Wolfram Alpha can interpret.
+     */
     private String wolframFormat() {
         String out = "{";
 
@@ -195,11 +197,7 @@ class Rowperator {
 
         switch (args.length) {
         case 0:
-            String i = "";
-            for (String s : args) {
-                i += s.trim() + " ";
-            }
-            rp = new Rowperator(i);
+            rp = new Rowperator();
             break;
         case 2:
             int k = Integer.parseInt(args[0]);
@@ -207,7 +205,12 @@ class Rowperator {
             rp = new Rowperator(k, j);
             break;
         default:
-            rp = new Rowperator();
+            String i = "";
+            for (String s : args) {
+                i += s.trim() + " ";
+            }
+            rp = new Rowperator(i);
+            break;
         }
 
         while (true) {
