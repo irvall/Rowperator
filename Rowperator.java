@@ -11,6 +11,17 @@ class Rowperator {
         show();
     }
 
+    public Rowperator(int row, int col) {
+        Random r = new Random();
+        matrix = new float[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                matrix[i][j] = r.nextInt(20) + 1;
+            }
+        }
+        show();
+    }
+
     public Rowperator() {
         Random r = new Random();
         int x = r.nextInt(10) + 1;
@@ -23,9 +34,10 @@ class Rowperator {
             }
         }
         show();
+        System.out.println(wolframFormat());
     }
 
-    private String wolframAlphaFormat() {
+    private String wolframFormat() {
         String out = "{";
 
         for (int i = 0; i < matrix.length; i++) {
@@ -154,6 +166,12 @@ class Rowperator {
                     swapRow(row1, row2);
                     break;
                 }
+
+                if (r1comp[0].length() > 0)
+                    divideRow(row1, Integer.parseInt(r1comp[0]));
+                if (r2comp[0].length() > 0)
+                    divideRow(row2, Integer.parseInt(r2comp[0]));
+
             }
         }
     }
@@ -173,13 +191,20 @@ class Rowperator {
         Rowperator rp;
         Scanner in = new Scanner(System.in);
 
-        if (args.length > 0) {
+        switch (args.length) {
+        case 0:
             String i = "";
             for (String s : args) {
                 i += s.trim() + " ";
             }
             rp = new Rowperator(i);
-        } else {
+            break;
+        case 2:
+            int k = Integer.parseInt(args[0]);
+            int j = Integer.parseInt(args[1]);
+            rp = new Rowperator(k, j);
+            break;
+        default:
             rp = new Rowperator();
         }
 
